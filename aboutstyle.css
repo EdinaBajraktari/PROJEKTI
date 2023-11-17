@@ -99,6 +99,7 @@ header{
 	margin: auto;
 	padding-top: 80px;
 	padding-bottom: 50px;
+	background-repeat: no-repeat;
   }
   .about-col {
 	flex-basis: 48%;

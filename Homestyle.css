@@ -1,3 +1,4 @@
+
 header{
   min-height: 100vh;
   width: 100%;
@@ -187,112 +188,133 @@ header{
   opacity: 1;
   right: 0;
 }
-/*--Foter--*/
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+
+/*Pjesa e students*/
+
+.thoughts{
+
+  padding-bottom: 10%;
+  color: gray;
+  text-align: center;
 }
 
-* {
-	margin: 0;
-	padding: 0;
+.thoughts-inner{
+
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px 0;
+}
+.thoughts-box{
+  width: auto;
+  height: auto;
+  background: maroon;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.row{
+  display: flex;
+  justify-content: center;
+}
+.col{
+  box-sizing: border-box;
+  padding: 15px;
+}
+.thought{
+  background: white;
+  padding: 30px;
+}
+.thought img{
+ width: 300px;
+ height: 400px;
+  border-radius: 50%;
+}
+.stars{
+  color: #971717;
+  margin-bottom: 20px;
 }
 
-body {
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
+/*--Footer--*/
+
+footer {
+  background-color: black;
+  color: #fefefe;
+  position: absolute;
+  width: 100%;
+
+
+}
+footer .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 3px;
 }
 
-.footer {
-	background-color: #151515;
-	padding: 80px 0;
+footer .content p {
+  margin-bottom: 3px;
 }
 
-.container {
-	max-width: 1170px;
-	margin: auto;
+footer .content a {
+  text-decoration: none;
+  color: #fefefe;
+}
+footer h4{
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  color: #fff;
+  margin-bottom: 35px;
+  position: relative;
+}
+footer h4::before{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  background: orange;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
 }
 
-.row {
-	display: flex;
-	flex-wrap: wrap;
+footer .content a:hover {
+  border-bottom: 1px solid #971717;
 }
 
-ul {
-	list-style: none;
+footer .content h4 {
+  margin-bottom: 5px;
+  font-size: 19px;
 }
 
-.footer-col {
-	width: 25%;
-	padding: 0 15px;
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.footer-col h4 {
-	font-size: 18px;
-	color: #FFF;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
+
+
+@media (max-width: 767px) {
+  footer .content {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  footer {
+    position: unset;
+  }
 }
 
-.footer-col h4::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	background-color: #E91E63;
-	width: 50px;
-	height: 2px;
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .content,
+  footer {
+    font-size: 14px;
+  }
 }
 
-.footer-col ul li:not(:last-child) {
-	margin-bottom: 10px;
+@media (orientation: landscape) and (max-height: 500px) {
+  footer {
+    position: unset;
+  }
 }
 
-.footer-col ul li a {
-	color: #DDD;
-	display: block;
-	font-size: 1rem;
-	font-weight: 300;
-	text-transform: capitalize;
-	text-decoration: none;
-	transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-	color: #FFF;
-	padding-left: 7px;
-}
-
-.footer-col .social-links a {
-	color: #FFF;
-	background-color: rgba(255, 255, 255, 0.2);
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	text-align: center;
-	margin: 0 10px 10px 0;
-	line-height: 40px;
-	transition: all 0.5s ease;
-}
-
-.footer-col .social-links a:hover {
-	color: #151515;
-	background-color: #FFF;
-}
-
-@media(max-width: 767px) {
-	.footer-col {
-		width: 50%;
-		margin-bottom: 30px;
-	}
-}
-
-@media(max-width: 574px) {
-	.footer-col {
-		width: 100%;
-	}
-}
