@@ -1,0 +1,22 @@
+*{margin: 0%;padding-top: 0;}
+body{
+    display: flex;
+    width: 100%;
+    font-family: "A";
+    serif;
+}
+h1{text-align: center;}
+
+p{
+    font-size: 14pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+#formulari{
+    width: 40%;
+    margin-top: auto;
+    background-color: black;
+}
+
+
+
