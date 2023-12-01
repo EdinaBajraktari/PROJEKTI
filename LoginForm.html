@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log in</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="Login.css" />
     </head>
+    <body>
+
+        <div class="container">
+            <div class="header">
+              <h2>Log in your account</h2>
+            </div>
+            <form class="form" id="form">
+              <div class="form__control">
+                <label>UserName</label>
+        <input type="text" placeholder="Enter your username" id="userName"/>
+                <small>There is a mistake</small>
+              </div>
+              <div class="form__control">
+                <label>Password</label>
+                <input type="password" placeholder="password..." id="password" />
+                <small>There is a mistake</small>
+              </div>
+              <div class="form__control">
+                <label>Confirm Password</label>
+                <input
+                  type="password"
+                  placeholder="confirm password..."
+                  id="confirmPassword" />
+                <small>There is a mistake</small>
+              </div>
+              <button>Log in</button>
+            </form>
+          </div>
+      
+          <script src="Login.js"></script>
+        
+    </body>
+</html>
