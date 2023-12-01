@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Formulari">
+        <h1>Ketu mund te regjistroheni</h1>
+        <p>Jepni te dhenat e juaja te sakta</p>
+        <form>
+        <ul>
+        <li><label>Emri dhe Mbiemri:</label></li>
+        <li><input type="text" id="emri" size="40" /></li>
+        <li><label>Username:</label></li>
+        <li><input type="text" id="emri" size="15" /></li>
+        <li><label>Fjalkalimi:</label></li>
+        <li><input type="password" id="pass" size="15" /></li>
+        <li><label>Email:</label></li>
+        <li><input type="text" id="adresaEmailit" size="40" /></li>
+        <li><input type="submit" value="Regjistrohu" id="submit" /></li>
+        </ul>
+        </form>
+        <script>
+        var emriRegex=/[a-zA-z\s]+$/;
+        if(!emriRegex.test(emri)){
+            altert("Ju lutem shkruani nje emer valid");
+            return false;
+        }
+
+        var UsernameRegex=/[^a-z\s]+$/;
+        if(!Username.test(Username)){
+            altert("Ju lutem shkruani nje Username valid");
+            return false;
+        }
+        if(password.length<7){
+            alert("password duhet te jete mbi 7 karaktere");
+            return false;
+        }
+        var emailRegex=/^[^\s@]+@[^\s@]+\.[*\s@]+$/;;
+        if(!emailRegex.test(email)){
+            altert("Ju lutem shkruani nje Username valid");
+            return false;
+       
+
+
+     </script>
+    </div>
+</body>
+</html>
