@@ -1,21 +1,34 @@
-*{margin: 0%;padding-top: 0;}
+*{margin: 0%;
+  padding-top: 0;
+   box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 body{
     display: flex;
+    width: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background:linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.formulari{
+    max-width: 700px;
     width: 100%;
-    font-family: "A";
-    serif;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
 }
-h1{text-align: center;}
-
-p{
-    font-size: 14pt;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 10px;
-}
-#formulari{
-    width: 40%;
-    margin-top: auto;
-    background-color: black;
+.formulari.title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}   
+.formulari.title::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: #9b59b6;
 }
 
 
