@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Log in</title>
+        <title>Login</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="Login.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     </head>
     <body>
+      <script src="Login.js"></script>
+      <div class="container">
+       <form action="" id="form" onsubmit="return validateLoginForm()">
+        <h1>Login</h1>
+        <div class="box">
+       <input  type="text" placeholder="username" id="username" required>
+       <i class='bx bxs-user'></i>
 
-        <div class="container">
-            <div class="header">
-              <h2>Log in your account</h2>
-            </div>
-            <form class="form" id="form">
-              <div class="form__control">
-                <label>UserName</label>
-        <input type="text" placeholder="Enter your username" id="userName"/>
-                <small>There is a mistake</small>
-              </div>
-              <div class="form__control">
-                <label>Password</label>
-                <input type="password" placeholder="password..." id="password" />
-                <small>There is a mistake</small>
-              </div>
-              <div class="form__control">
-                <label>Confirm Password</label>
-                <input
-                  type="password"
-                  placeholder="confirm password..."
-                  id="confirmPassword" />
-                <small>There is a mistake</small>
-              </div>
-              <button>Log in</button>
-            </form>
-          </div>
+        </div>
+        <div class="box">
+          <input  type="password" placeholder="passoword" id="password" required>
+          <i class='bx bxs-lock-alt'></i>
       
-          <script src="Login.js"></script>
+           </div>
+           <div class="forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="#">Forgot password?</a>
+             </div>
+             <button type="submit" class="btn">Login</button>
+
+             <div class="register-link">
+              <p>Dont have an account?<a href="register.html">Register</a></p>
+             </div>
+             
+       </form>
+
+      </div>
+      
+    
         
     </body>
 </html>
