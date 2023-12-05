@@ -1,43 +1,13 @@
-const form = document.getElementById('form');
-form.addEventListener('submit', validateLoginForm);
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+function validateForm(){
+    var username = document.getElementById('username').value;
+    var password =document.getElementById('password').value;
 
-function validateLoginForm(event) {
-  event.preventDefault();
+    var usernameRegex=/^[a-z0-9_-]{3,15}$/;
+    if(!usernameRegex.test(username)){
+        alert('Username is incorrect');
+    }
 
-
-  if (!validateUsername(username.value)) {
-    alert('Please enter a valid  username');
-    return;
+    if(password.length<8){
+        alert('Password must be at least 8 characters long.');
+    }
 }
-
-  if (!validatePassword(password.value)) {
-    alert('Please enter a valid password.');
-      return;
-  }
-
-  alert('Login successful!');
-
-  
-  function validateUsername(username) {
-    const UserRegex = /^[a-z0-9_-]{3,15}$/;
-    return UserRegex.test(username);
-  }
-  
-  function validatePassword(password) {
-  
-    const minLength = 8;
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasNumber = /\d/.test(password);
-  
-    return (
-        password.length >= minLength &&
-        hasUpperCase &&
-        hasLowerCase &&
-        hasNumber
-    );
-  }
-}
-
