@@ -11,25 +11,41 @@ body{
     padding: 10px;
     background:linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.formulari{
+.register{
     max-width: 700px;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
     border-radius: 5px;
+    justify-content: center;
+    margin-left: 600px;
 }
-.formulari.title{
+.register.title{
     font-size: 25px;
     font-weight: 500;
     position: relative;
 }   
-.formulari.title::before{
+.register.title::before{
     content: "";
     position: absolute;
+    left: 0%;
+    bottom: 0%;
     height: 3px;
     width: 30px;
-    background: #9b59b6;
+    background:linear-gradient(135deg, #71b7e6, #9b59b6);;
 }
-
+ul{
+    list-style-type: none;
+}
+.register form.label{
+    display: flex;
+    flex-wrap: wrap;
+}
+ form.label.li{
+    width: calc(100% /2-20px);
+}
+label{
+    height: 45px;
+}
 
 
