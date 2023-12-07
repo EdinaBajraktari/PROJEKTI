@@ -21,7 +21,7 @@ header{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .nav a:hover {
@@ -98,13 +98,6 @@ header{
   color: #fff;
 }
 
-@media screen and (max-width: 600px) {
-  header{
-    float: none;
-  }
-
-}
-
 #course{
   padding: 30px 10px 10px 10px ;
   text-align: center;
@@ -136,6 +129,27 @@ header{
  border-radius: 100px solid black;
 
 }
+@media (max-width: 767px) {
+ #course{
+    font-size: 14px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #course .course-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+ #course {
+    position: unset;
+  }
+}
+
 
 #Container{
   display: flex;
@@ -196,6 +210,26 @@ header{
 }
 
 
+@media (max-width: 767px) {
+  .thoughts-box .thoughts-inner{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .thoughts {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+ .thoughts {
+    position: unset;
+  }
+}
 
 
 /*Pjesa e students*/
@@ -242,6 +276,27 @@ header{
   color: #971717;
   margin-bottom: 20px;
 }
+@media (max-width: 767px) {
+  .thoughts .thoughts-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .thoughts {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+ .thoughts {
+    position: unset;
+  }
+}
+
 
 /*--Footer--*/
 
