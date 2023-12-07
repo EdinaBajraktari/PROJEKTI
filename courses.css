@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+  
+  }
+  body{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+  }
+    .nav {
+      overflow: hidden;
+      background-color: #ffffff;
+      align-items: center;
+    /*  box-shadow: 2px 2px 4px;*/
+    }
+    
+    .nav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    .nav a:hover {
+      background-color:rgb(201, 11, 11);
+      color: black;
+    }
+    
+    .nav .search {
+      margin-right: 10px;
+      float: right;
+      margin-bottom: 10px;
+    }
+    
+    .nav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: 2px solid bold maroon;
+    }
+    /* course */
+
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  p {
+    color: #777;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+  .row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .course-col {
+    flex-basis: 31%;
+    background-color: #9fc7c0;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  .course-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  * {box-sizing:border-box}
+  <!--Slideshow-->
+ 
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlidesfade {
+  display: all;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+footer {
+	background-color: black;
+	color: #fefefe;
+	position: absolute;
+	width: 100%;
+  
+  
+  }
+  footer .content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 3px;
+  }
+  
+  footer .content p {
+	margin-bottom: 3px;
+  }
+  
+  footer .content a {
+	text-decoration: none;
+	color: #fefefe;
+  }
+  footer h4{
+	font-size: 18px;
+	font-weight: 500;
+	position: relative;
+	color: #fff;
+	margin-bottom: 35px;
+	position: relative;
+  }
+  footer h4::before{
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	background: orange;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+  }
+  
+  footer .content a:hover {
+	border-bottom: 1px solid #971717;
+  }
+  
+  footer .content h4 {
+	margin-bottom: 5px;
+	font-size: 19px;
+  }
+  
+  footer {
+	text-align: center;
+	margin-bottom: 2rem;
+  }
+  
+  
+  
+  @media (max-width: 767px) {
+	footer .content {
+	  display: flex;
+	  flex-direction: column;
+	  font-size: 14px;
+	}
+  
+	footer {
+	  position: unset;
+	}
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+	footer .content,
+	footer {
+	  font-size: 14px;
+	}
+  }
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+	footer {
+	  position: unset;
+	}
+  }
