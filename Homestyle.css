@@ -385,3 +385,28 @@ footer {
   }
 }
 
+.rating [type=checkbox] {
+  position: relative;
+  left: -2000px;
+}
+
+.rating {
+  margin-left: 80px;
+  --transition-duration: .75s;
+  display: flex;
+  font-size: 2rem;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.rating__star {
+  position: relative;
+  padding: 5px;
+  opacity: 0.1;
+  transition: opacity var(--transition-duration);
+}
+.rating__star:hover, .rating__star:hover ~ .rating__star {
+  opacity: 1;
+  transition: opacity var(--transition-duration);
+  cursor: pointer;
+}
+
