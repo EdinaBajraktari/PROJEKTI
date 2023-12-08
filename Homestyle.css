@@ -113,6 +113,13 @@ header{
   padding: 30px 10px 10px 10px ;
   text-align: center;
 }
+#course h4{
+  font-size: 18px;
+   border: 2px solid red;
+   border-radius: 25px;
+   margin-left: 30px;
+   padding-left: 30px;
+  }
 
 #course .course-box{
   display: flex;
@@ -265,25 +272,7 @@ header{
  height: 400px;
   border-radius: 50%;
 }
-.stars{
-  color: #971717;
-  margin-bottom: 20px;
-}
-stars:not(:checked) > i:before {
-  content: '★ ';
-}
-.stars > i:checked ~ i {
-  color: #ffc700;
-}
-.stars:not(:checked) > i:hover,
-.stars:not(:checked) > i:hover ~ i {
-  color: #deb217;
-}
 
-.stars > i:checked ~ i:hover,
-.stars > i:checked ~ i:hover ~i,
-.stars > i:hover ~ i:checked ~ i {
-  color: #c59b08;}
 
   @media (max-width: 1000px) {
     .row{
@@ -387,10 +376,12 @@ footer {
 
 .rating [type=checkbox] {
   position: relative;
-  left: -2000px;
+  color: #971717;
+  left: -1500px;
 }
 
 .rating {
+ 
   margin-left: 100px;
   --transition-duration: .75s;
   display: flex;
