@@ -391,7 +391,7 @@ footer {
 }
 
 .rating {
-  margin-left: 80px;
+  margin-left: 100px;
   --transition-duration: .75s;
   display: flex;
   font-size: 2rem;
