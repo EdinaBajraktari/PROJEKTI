@@ -166,14 +166,44 @@ color: lightgray;
 }
 
 
-  <!--Slideshow-->
- .info{
-  text-replace: 
+  <!--Paragrafet-->
+  .Paragrafet{
+    text-size-adjust: 2px;
+  }
+ .paragrafi2{
+  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 50px; 
  }
- .info.p1{
-  text-decoration: line-through;
+ .paragrafi2.h2{
+   text-size-adjust: 5;
+
  }
- .info.h1{
+ .paragrafi2.p2{
+  text-decoration-color: #971717;
+ }
+ .paragrafi3{
+  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 50px; 
+ }
+ .paragrafi3.h3{
+   text-size-adjust: 5;
+
+ }
+ .paragrafi3.p2{
+  text-decoration-color: #971717;
+ }
+ .paragrafi1{
+  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 50px; 
+ }
+ .paragrafi1.h1{
+   text-size-adjust: 5;
+
+ }
+ .paragrafi1.p1{
   text-decoration-color: #971717;
  }
 
