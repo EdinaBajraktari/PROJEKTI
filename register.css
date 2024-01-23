@@ -1,4 +1,4 @@
-*{margin: 0%;
+*{margin: 0;
   padding-top: 0;
    box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -17,8 +17,7 @@ body{
     background: #fff;
     padding: 25px 30px;
     border-radius: 5px;
-    justify-content: center;
-    margin-left: 600px;
+    margin: 0 auto;
 }
 .register.title{
     font-size: 25px;
@@ -43,16 +42,16 @@ ul{
     justify-content: space-between;
     margin: 20px 0 12px 0;
 }
- form.user-details.input-box{
+.register form .user-details .input-box {
     margin-bottom: 15px;
-    width: calc(100% /2-20px);
+    width: calc(50% - 20px);
 }
-form.user-details.input-box.details{
+.register form .user-details .input-box .details {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
-
 }
+
 .user-details.input-box input{
     height: 45px;
     width: 100%;
@@ -65,27 +64,27 @@ form.user-details.input-box.details{
     transition: all 0.3s ease;
 }
 .user-details.input-box input:focus,
-.user-details.input-box input:focus,:valid{
+.user-details.input-box input:focus:valid{
     border-color: #9b59b6;
 
 }
-form.gender-details.gender-title{
+.register form .gender-details .gender-title {
     font-size: 20px;
     font-weight: 500;
-
 }
-form.gender-details.category{
+
+.register form .gender-details.category{
     display: flex;
     width: 80%;
     margin: 14px 0;
     justify-content: space-between;
 
 }
-.gender-details.category label{
+.register form .gender-details.category label{
   display: flex;
   align-items: center;
 }
-.gender-details.category.dot{
+.register form .gender-details.category.dot{
     height: 18px;
     width: 18px;
     background: red;
@@ -103,11 +102,11 @@ form.gender-details.category{
 form input[type="radio"]{
     display: none;
 }
-form .button{
+.register form .button{
     height: 45px;
     margin: 45px 0;
 }
-form.button input{
+.register form .button input{
     height: 100%;
     width: 100%;
     outline-color: none;
@@ -119,26 +118,17 @@ form.button input{
     letter-spacing: 1px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-form.button input:hover{
+.register form .button input:hover{
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
-@media(max-width:584px){
-    .container{
-        max-width: 100%;
-}
-form.user-details.input-box{
-    margin-bottom: 15px;
-    width: 100%;
-}
-form.gender-details.category{
-    width: 100%;
-}
-.register form.user-details{
-    max-height: 300px;
-    overflow-y: scroll;
-}
-.user-details::-webkit-scrollnbar{
-    width: 0;
-}
+@media (max-width: 768px) {
+    .register form .user-details .input-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .register form .gender-details .category {
+        width: 100%;
+    }
 }
 
