@@ -167,45 +167,46 @@ color: lightgray;
 
 
   <!--Paragrafet-->
-  .Paragrafet{
-    text-size-adjust: 2px;
-  }
- .paragrafi2{
-  text-decoration: none;
-  margin-left: 50px;
-  margin-right: 50px; 
- }
- .paragrafi2.h2{
-   text-size-adjust: 5;
+ .Paragrafet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px;
+  padding: 20px;
+}
 
- }
- .paragrafi2.p2{
-  text-decoration-color: #971717;
- }
- .paragrafi3{
-  text-decoration: none;
-  margin-left: 50px;
-  margin-right: 50px; 
- }
- .paragrafi3.h3{
-   text-size-adjust: 5;
+.paragrafi1,
+.paragrafi2,
+.paragrafi3 {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
 
- }
- .paragrafi3.p2{
-  text-decoration-color: #971717;
- }
- .paragrafi1{
-  text-decoration: none;
-  margin-left: 50px;
-  margin-right: 50px; 
- }
- .paragrafi1.h1{
-   text-size-adjust: 5;
+.paragrafi1:hover,
+.paragrafi2:hover,
+.paragrafi3:hover {
+  transform: scale(1.05);
+}
 
- }
- .paragrafi1.p1{
-  text-decoration-color: #971717;
- }
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p1, p2, p3 {
+  color: #555;
+  line-height: 1.6;
+}
 
 
 footer {
