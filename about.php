@@ -1,3 +1,16 @@
+<?php
+    function nrVizitave(){
+    $numroHits = $_COOKIE['numro'] ?:0;
+    $numroHits++;
+
+setcookie('numro',$numroHits,time()+86400*30);
+
+echo "Ju keni vizituar faqën tonë: ".$numroHits." herë.";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,6 +39,7 @@
           <input type="text" placeholder="About us" style="height: 20px;">
           <button class="butoni_bg">
       </div>  
+      <p1><?php nrVizitave(); ?></p1>
       <!--SlideShow-->  
       <h1>Advantages of Online Learning</h1>
       <div class="slideshow-container">
@@ -118,6 +132,7 @@
         </div>
       </div>
     </section>
+    
 
  
 
