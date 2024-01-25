@@ -1,3 +1,26 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $name = $_POST["name"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $country = $_POST["country"];
+    $gender = $_POST["gender"];
+
+    
+    setcookie("user_name", $name, time() + 86400, "/");
+    setcookie("user_username", $username, time() + 86400, "/");
+    setcookie("user_email", $email, time() + 86400, "/");
+    setcookie("user_country", $country, time() + 86400, "/");
+    setcookie("user_gender", $gender, time() + 86400, "/");
+
+    
+    header("Location: LoginForm.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
