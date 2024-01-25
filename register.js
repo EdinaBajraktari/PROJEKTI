@@ -1,11 +1,18 @@
-var nameRegex=/[a-zA-z\s]+$/;
-        if(!nameRegex.test(name)){
+function validateForm(){
+    var name=document.getElementById('name').value;
+    var username=document.getElementById('username').value;
+    var password=document.getElementById('password').value;
+    var email=document.getElementById('email').value;
+    var country=document.getElementById('country').value;
+    var genderOptions=document.querySelectorAll('input[name="gender"]:checked');
+    
+        if(!/^[a-zA-Z0-9]+$/.test(name)){
             alert("Ju lutem shkruani nje emer valid");
             return false;
         }
 
-        var usernameRegex=/^[a-zA-Z0-9]+$/;
-        if(!username.test(username)){
+       
+        if(!/^[a-zA-Z0-9]+$/.test(username)){
             alert("Ju lutem shkruani nje Username valid");
             return false;
         }
@@ -13,31 +20,20 @@ var nameRegex=/[a-zA-z\s]+$/;
             alert("password duhet te jete mbi 7 karaktere");
             return false;
         }
-        var emailRegex=/^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/;
-        if(!emailRegex.test(email)){
-            alert("Ju lutem shkruani nje Username valid");
+        
+        if(!/^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/.test(email)){
+            alert("Ju lutem shkruani nje Email valid");
             return false;
         }
-        /*var countryRegex;*/
-        if(ucountry.value == "Default"){
+        
+        if(country === "Default"){
             alert("Zgjidhni vendin tuaj");
-            ucountry.focus();
             return false;
         }
-
-        var x=0;
-        if(umgender.checked){
-            x++;
-        }if(ufgender.checked){
-            x++;
-        }
-        if(x==0){
-            altert("Zgjidhni Male/Female");
-            umgender.focus();
+        if(genderOptions.length===0){
+            alert("Zgjidhni nje opsion për gjininë");
             return false;
         }
-        else{
-            alert("Form Successfully Submitted");
-            window.location.reload()
-            return true;
-        }
+        alert("Form Successfully Submitted");
+        return true;
+}        
