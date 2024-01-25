@@ -39,9 +39,9 @@
         <select id="country" name="country" required>
             <option selected="" value="Default">(Please select a country)</option>
         <option value="AF">Australia</option>
-        <option value="AL">Albanian</option>
+        <option value="AL">Albania</option>
         <option value="RKS">Kosovo</option>
-        <option value="AS">Russia</option>
+        <option value="AS">UK</option>
         <option value="AD">USA</option>
         </select>
         </div>

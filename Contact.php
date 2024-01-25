@@ -14,10 +14,10 @@
 
 
             <div class="nav">
-                <a class="active" href="Home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="Courses.html">All Courses</a>
-                <a href="Contact.html">Contact</a>
+                <a class="active" href="Home.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="Courses.php">All Courses</a>
+                <a href="Contact.php">Contact</a>
                 <div class="search">
                
                     <input type="text" placeholder="Search.." name="search">
