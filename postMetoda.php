@@ -7,10 +7,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 }
 ?>
-<!DOCTYPE html>
-<html>
-<body>
-Mirsevjen: <?php echo $_REQUEST["user"]; ?><br>
-
-</body>
-</html>
