@@ -13,7 +13,7 @@
        <form method="POST" action="postMetoda.php" id="Form" onsubmit="return validateForm()">
         <h1>Login</h1>
         <div class="box">
-        <input  type="text" placeholder="username" name="user" id="username" required>
+       Username: <input  type="text" placeholder="username" name="user" id="username" required>
        <i class='bx bxs-user'></i>
 
         </div>
