@@ -114,13 +114,13 @@
 
           <div class="info">
             <h4 class="address">Address</h4>
-            <p><a><!--<i class="fab fa-location"></i>-->
+            <p><a>
                 Kosove, Prishtine, 10000</a>
             </p>
             <h4 class="mobile">Mobile</h4>
-            <p><a><!--<i class="fab fa-phone"></i>-->+383 45-000-000</a></p>
+            <p><a>+383 45-000-000</a></p>
             <h4 class="mail">Email</h4>
-            <p><a><!--<i class="fab fa-envelope"></i>-->EDlearn@gmail.com</a></p>
+            <p><a>EDlearn@gmail.com</a></p>
           </div>
         </div>
     </footer>
