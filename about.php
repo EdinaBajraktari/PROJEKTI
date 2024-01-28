@@ -40,7 +40,9 @@ echo "Ju keni vizituar faqën tonë: ".$numroHits." herë.";
           <button class="butoni_bg">
       </div>  
       <p1><?php nrVizitave(); ?></p1>
-      <!--SlideShow-->  
+      <!--SlideShow--> 
+      
+     
       <h1>Advantages of Online Learning</h1>
       <div class="slideshow-container">
 
