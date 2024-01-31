@@ -17,4 +17,5 @@ echo "<br><a href='welcome.php'>back</a>";
 </html>
 
 <?php } else {header('Location:LoginForm.php');}
+
  ?>
