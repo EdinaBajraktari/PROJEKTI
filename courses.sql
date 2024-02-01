@@ -1,3 +1,14 @@
+USE course;
+
+CREATE TABLE IF NOT EXISTS courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    views INT NOT NULL,
+    price DECIMAL(8,2) NOT NULL
+);
+
 INSERT INTO courses (image, link, date, views, price)
 VALUES ('c++.png', 'https://www.youtube.com/watch?v=OXGznpKZ_sA', '2023-10-24', 10460, 56.32),('python.jpg', 'https://www.youtube.com/watch?v=rfscVS0vtbw', '27 Nov 2023', '14,502', '75.3'),
 ('ruby.png', 'https://www.youtube.com/watch?v=t_ispmWmdjY', '06 Dec 2022', '11,906', '123'),
