@@ -66,6 +66,7 @@ $conn->close();
                 <a href="about.php">About</a>
                 <a href="Courses.php">All Courses</a>
                 <a href="Contact.php">Contact</a>
+                <a href="news.php">News</a>
                 <div class="search">
                
                     <input type="text" placeholder="Search.." name="search">
