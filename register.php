@@ -1,11 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-<<<<<<< Updated upstream
     
-=======
-   
->>>>>>> Stashed changes
     $name = $_POST["name"];
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -14,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = $_POST["gender"];
 
     
-<<<<<<< Updated upstream
     setcookie("user_name", $name, time() + 86400, "/");
     setcookie("user_username", $username, time() + 86400, "/");
     setcookie("user_email", $email, time() + 86400, "/");
@@ -26,22 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
-=======
-
-    
-    echo "Registration successful!<br>";
-    echo "Name: $name<br>";
-    echo "Username: $username<br>";
-    echo "Email: $email<br>";
-    echo "Country: $country<br>";
-    echo "Gender: $gender<br>";
-    exit(); 
-}
-?>
-
-
-
->>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
