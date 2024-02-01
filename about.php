@@ -1,13 +1,51 @@
 <?php
-    function nrVizitave(){
-    $numroHits = $_COOKIE['numro'] ?:0;
+function nrVizitave() {
+    $numroHits = isset($_COOKIE['numro']) ? $_COOKIE['numro'] : 0;
     $numroHits++;
 
-setcookie('numro',$numroHits,time()+86400*30);
+    setcookie('numro', $numroHits, time() + 86400 * 30);
 
-echo "Ju keni vizituar faqën tonë: ".$numroHits." herë.";
+    echo "Ju keni vizituar faqën tonë: " . $numroHits . " herë.";
 }
+
+$servername = "127.0.0.1";  
+$username = "root";  
+$password = "";
+$dbname = "aboutdatabase";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_errno . " - " . $conn->connect_error);
+}
+
+function sanitizeData($data) {
+    return htmlspecialchars(trim($data));
+}
+
+function processContactForm() {
+    global $conn;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $message = sanitizeData($_POST['contact_message']);
+        $message = $conn->real_escape_string($message);
+
+        $sql = "INSERT INTO contact_requests (message) VALUES ('$message')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Contact request submitted successfully!";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+
+processContactForm();
+
+$conn->close();
 ?>
+
+
 
 
 

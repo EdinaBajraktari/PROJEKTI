@@ -26,3 +26,35 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  var contactForm = document.getElementById("contactForm");
+  
+  if (contactForm) {
+      contactForm.addEventListener("submit", function(event) {
+          event.preventDefault(); 
+
+          
+          if (validateForm()) {
+              contactForm.submit();
+          }
+      });
+  }
+
+  
+  function validateForm() {
+      var message = document.getElementById("contact_message").value;
+      var errorMessage = document.getElementById("error_message");
+      
+      if (message.trim() === "") {
+          alert("Please enter a message.");
+          return false;
+      }
+
+      
+      errorMessage.textContent = "";
+      return true; 
+  }
+});
+
