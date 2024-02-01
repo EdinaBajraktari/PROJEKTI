@@ -138,7 +138,7 @@ $conn->close();
           <h1>We are the best E-Learning platform!</h1>
           <p>E-learning is a learning environment which uses information and communication technologies (ICT's) as a platform for teaching and learning activities. It has been defined as "pedagogy empowered by technology", though 'digital technology' is more accurate. Note that, due to the difference in terms of institutional goals, higher education and the industry have very different ideas about what e-learning is and how e-learning can be/should be used.</p>
           <div class="Contact Us">
-            <button class="Contact Us "> <a href="Contact.html" style="color: rgb(233, 8, 8);"><span>Contact for more</span></a> </button>
+            <button class="Contact Us "> <a href="Contact.php" style="color: rgb(233, 8, 8);"><span>Contact for more</span></a> </button>
         </div>
         </div>
     </section>
