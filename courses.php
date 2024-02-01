@@ -1,4 +1,14 @@
 <?php
+$servername = "127.0.0.1";  
+$username = "root";  
+$password = "";
+$dbname = "aboutdatabase";
+
+$conn = new mysqli($image, $link, $date, $views,$price);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_errno . " - " . $conn->connect_error);
+}
 
 class Course {
     public $image;
