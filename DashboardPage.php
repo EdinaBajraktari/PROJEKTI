@@ -15,11 +15,12 @@ if ($conn->connect_error) {
 
 session_start();
 
-// Assuming you have set the 'role' in the session after user login
-if ($_SESSION['role'] !== 'admin') {
-    header("Location: index.php"); // Redirect to the login page or another appropriate page
-    exit();
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin'){
+
 }
+//if ($_SESSION['role'] !== 'admin') {
+//    header("Location: DashboardPage.php"); 
+//}
 echo "Debug Point 1<br>";
 $userData = [
     "username" => "user1",
@@ -35,7 +36,6 @@ if ($stmtUser) {
     $stmtUser->bind_param("ssss", $userData['username'], $userData['email'], $userData['password'], $userData['role']);
 
     if ($stmtUser->execute()) {
-        echo "Sample user inserted successfully.<br>";
     } else {
         echo "Error inserting user: " . $stmtUser->error . "<br>";
     }
@@ -61,7 +61,6 @@ if ($stmtCourses) {
         $stmtCourses->bind_param("ssi", $data[0], $data[1], $userId);
 
         if (!$stmtCourses->execute()) {
-            echo "Error inserting courses: " . $stmtCourses->error . "<br>";
             break;
         }
     }
