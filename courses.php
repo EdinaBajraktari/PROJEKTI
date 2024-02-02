@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "aboutdatabase";
 
-$conn = new mysqli($image, $link, $date, $views,$price);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_errno . " - " . $conn->connect_error);
