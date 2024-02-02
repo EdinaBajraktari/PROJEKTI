@@ -29,8 +29,8 @@
                 <a href="Courses.php">All Courses</a>
                 <a href="Contact.php">Contact</a>
                 <a href="news.php">News</a>
-                <a href="dashboard.php" class="<?php echo $hide?>">Dashboard</a>
-                <a href="logout.php">Logout</a>
+                <a href="DashboardPage.php">Dashboard</a>
+
                 <div class="search">
                
                     <input type="text" placeholder="Search.." name="search">
@@ -99,7 +99,7 @@
      Together they are powerful beyond imagination.”- Albert Einstein, physicist
           </p>
           <div class="startbtn">
-            <button class="startbtn "> <a href="courses.html" style="color: aliceblue;"><span>Get started</span></a> </button>
+            <button class="startbtn "> <a href="courses.php" style="color: aliceblue;"><span>Get started</span></a> </button>
         </div>
    </div>
 
