@@ -15,11 +15,12 @@ if ($conn->connect_error) {
 
 session_start();
 
-// Assuming you have set the 'role' in the session after user login
-if ($_SESSION['role'] !== 'admin') {
-    header("Location: index.php"); // Redirect to the login page or another appropriate page
-    exit();
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin'){
+
 }
+//if ($_SESSION['role'] !== 'admin') {
+//    header("Location: DashboardPage.php"); 
+//}
 echo "Debug Point 1<br>";
 $userData = [
     "username" => "user1",
