@@ -1,15 +1,25 @@
 <?php
 
-$server_name = "localhost";
-$db_username = "root";
-$db_password = "";
-$db_name = "elearning";
+class DatabaseConenction{
+    private $server="localhost";
+    private $username="root";
+    private $password="";
+    private $database = "elearning";
 
-$connection = mysqli_connect($server_name,$db_username,$db_password,$db_name);
 
-if(!$connection)
-{
-    die("Connection failed: " . mysqli_connect_error());
- 
+    function startConnection(){
+
+        try{
+            $conn = new PDO("mysql:host=$this->server;dbname=$this->database",$this->username,$this->password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
+        }catch(PDOException $e){
+            echo "Database Conenction Failed".$e->getMessage();
+            return null;
+        }
+
+
+    }
 }
+
 ?>

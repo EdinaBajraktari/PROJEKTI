@@ -2,8 +2,12 @@
 
 session_start();
 
-session_destroy();
+  if(isset($_SESSION['username'])){ 
+  session_destroy(); 
+header('Location:Home.php');
 
-header('location:login.php');
+}else{
 
+header('Location:Home.php');
+}
 ?>
