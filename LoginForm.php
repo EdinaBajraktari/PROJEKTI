@@ -10,7 +10,7 @@
     <body>
  
       <div class="container">
-       <form method="POST" action="postMetoda.php" id="Form" onsubmit="return validateForm()">
+       <form method="POST" action="Metoda.php" id="Form" onsubmit="return validateForm()">
         <h1>Login</h1>
         <div class="box">
        Username: <input  type="text" placeholder="username" name="username" id="username" required>
@@ -33,6 +33,7 @@
              </div>
              
        </form>
+   
 
       </div>
       
@@ -40,3 +41,4 @@
 
     </body>
 </html>
+

@@ -41,7 +41,7 @@
         <div class="container">
             <h1 class="editor-h1">Editor Picks</h1>
             <div class="articles">
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <img src="tech1.jpg" alt="" />
                     <article>
                         <p class="technology-category">Technology</p>
@@ -54,7 +54,7 @@
                     </article>
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <article>
                         <p class="technology-category">Technology</p>
                         <h1>Lorem ipsum dolor sit amet.</h1>
@@ -66,7 +66,7 @@
                     </article>
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <img src="tech2.webp" alt="" />
                     <article>
                         <p class="technology-category">Technology</p>
@@ -79,7 +79,7 @@
                     </article>
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <article>
                         <p class="technology-category">Technology</p>
                         <h1>Lorem ipsum dolor sit amet.</h1>
@@ -92,7 +92,7 @@
                     <img src="tech3.avif" />
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <img src="tech4.avif" alt="" />
                     <article>
                         <p class="technology-category">Technology</p>
@@ -105,7 +105,7 @@
                     </article>
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <article>
                         <p class="technology-category">Technology</p>
                         <h1>Lorem ipsum dolor sit amet.</h1>
@@ -117,7 +117,7 @@
                     </article>
                 </a>
 
-                <a href="article.html" class="card">
+                <a href="article.php" class="card">
                     <article>
                         <p class="technology-category">Entertainment</p>
                         <h1>Lorem ipsum dolor sit amet.</h1>
