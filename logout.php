@@ -1,13 +1,7 @@
-<?php 
+<?php
+  session_start();
 
-session_start();
+  session_destroy();
 
-  if(isset($_SESSION['username'])){ 
-  session_destroy(); 
-header('Location:Home.php');
-
-}else{
-
-header('Location:Home.php');
-}
+  header("location:LoginForm.php");
 ?>

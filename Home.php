@@ -1,21 +1,13 @@
-
 <?php
-$username = 'admin';
-$password = 'admin123';
-session_start();
-
-if(isset($_SESSION['username'])){
-  echo "<h2>YOU are login as an: ".$_SESSION['username']."</h2>";
-   echo "<a href='logout.php'>logout</a>";
-}else{
-if($_POST['username']==$username && $_POST['password']==$password){
-$_SESSION['username'] = $username;
-echo "<script>location.href='Home.php'</script>";
-}else{
-echo "<script>alert('perdoruesi ose fjalkalimi GABIM!').</script>";
-echo "<script>location.href='LoginForm.php'</script>";
-}
-}
+  session_start();
+  $hide="";
+  if(!isset($_SESSION['username']))
+    header("location:LoginForm.php");
+  else{
+    if($_SESSION['role'] == "admin")
+      $hide = "";
+    else
+      $hide = "hide";
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +33,7 @@ echo "<script>location.href='LoginForm.php'</script>";
                 <a href="Contact.php">Contact</a>
                 <a href="news.php">News</a>
                 <a href="DashboardPage.php">Dashboard</a>
+                <li><a href="logout.php">Logout</a></li>
 
                 <div class="search">
                
@@ -215,8 +208,12 @@ echo "<script>location.href='LoginForm.php'</script>";
         </div>
     </footer>
 
-         
+    <h3><?php echo "Username: ".$_SESSION['username']."<br>" ?></h3>
+    <h3><?php echo "Login Time: ".$_SESSION['loginTime']."<br>"?></h3>
   
     </body>
 </html>
 
+<?php
+  }
+?>
