@@ -36,7 +36,6 @@ if ($stmtUser) {
     $stmtUser->bind_param("ssss", $userData['username'], $userData['email'], $userData['password'], $userData['role']);
 
     if ($stmtUser->execute()) {
-        echo "Sample user inserted successfully.<br>";
     } else {
         echo "Error inserting user: " . $stmtUser->error . "<br>";
     }
@@ -62,7 +61,6 @@ if ($stmtCourses) {
         $stmtCourses->bind_param("ssi", $data[0], $data[1], $userId);
 
         if (!$stmtCourses->execute()) {
-            echo "Error inserting courses: " . $stmtCourses->error . "<br>";
             break;
         }
     }
