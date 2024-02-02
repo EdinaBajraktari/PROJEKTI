@@ -87,7 +87,7 @@
      Together they are powerful beyond imagination.”- Albert Einstein, physicist
           </p>
           <div class="startbtn">
-            <button class="startbtn "> <a href="courses.html" style="color: aliceblue;"><span>Get started</span></a> </button>
+            <button class="startbtn "> <a href="courses.php" style="color: aliceblue;"><span>Get started</span></a> </button>
         </div>
    </div>
 
