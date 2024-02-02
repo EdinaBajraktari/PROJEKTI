@@ -1,3 +1,17 @@
+<?php
+require_once 'dbconfig.php';
+require_once 'newsdb.php';
+
+
+$database = new dbConnect();
+$db = $database->connectDB();
+
+
+$newsObj = new News($db);
+
+
+$editorPicks = $newsObj->getEditorPicks();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +26,18 @@
 </head>
 
 <body>
+<?php foreach ($editorPicks as $lajmi): ?>
+    <a href="article.php" class="card">
+        <img src="<?php echo $lajmi['fotografia']; ?>" alt="" />
+        <article>
+            <p class="technology-category"><?php echo $lajmi['kategoria']; ?></p>
+            <h1><?php echo $lajmi['titulli']; ?></h1>
+            <p><?php echo $lajmi['permbajtja']; ?></p>
+            <p><a href="<?php echo $lajmi['pdf_file']; ?>" target="_blank">Shiko PDF</a></p>
+        </article>
+    </a>
+<?php endforeach; ?>
+
    <header>
 
     <div class="nav">

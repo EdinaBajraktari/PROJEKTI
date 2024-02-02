@@ -1,3 +1,29 @@
+<?php
+require_once 'dbconfig.php';
+require_once 'contactdb.php';
+
+
+$database = new dbConnect();
+$db = $database->connectDB();
+
+
+$contact = new Contact($db);
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $FirstName = $_POST["FirstName"];
+    $LastName = $_POST["LastName"];
+    $phone=$_POST["Phone"];
+    $email = $_POST["email"];
+    $mesazhi = $_POST["mesazhi"];
+
+    if ($contact->insertContact($FirstName, $LastName,$email,$phone, $mesazhi)) {
+        echo "Të dhënat janë ruajtur me sukses!";
+    } else {
+        echo "Ka ndodhur një problem gjatë ruajtjes së të dhënave.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +51,7 @@
                 </div>
               </div>
 
-              <section class = "contact-section">
+              <section class = "contact-section" method="Post", action="">
                 <div class = "contact-bg">
                   <h3>Get in Touch with Us</h3>
                   <h2>Contact us</h2>
