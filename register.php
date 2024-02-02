@@ -129,8 +129,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="button">
-            <button class="Register "> <a href="LoginForm.php"</a> </button>
-    </div>
+            <input type="submit" value="Register"><a href="LoginForm.php"></a>
+            <!--<button class="Register"><a href="LoginForm.php">Login</a></button>-->
+            </div>
+
     </form>
 </div> 
         <script src="register.js"></script>
