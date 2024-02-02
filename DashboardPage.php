@@ -13,52 +13,87 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$username = "user1";
-$email = "user1@example.com";
-$password = password_hash("password123", PASSWORD_DEFAULT);
+session_start();
 
+// Assuming you have set the 'role' in the session after user login
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: index.php"); // Redirect to the login page or another appropriate page
+    exit();
+}
+echo "Debug Point 1<br>";
+$userData = [
+    "username" => "user1",
+    "email" => "user1@example.com",
+    "password" => password_hash("password123", PASSWORD_DEFAULT),
+    "role" => "admin"
+];
 
-$sqlInsertUser = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-if ($conn->query($sqlInsertUser) === TRUE) {
-    echo "Sample user inserted successfully.<br>";
+$sqlInsertUser = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
+$stmtUser = $conn->prepare($sqlInsertUser);
+
+if ($stmtUser) {
+    $stmtUser->bind_param("ssss", $userData['username'], $userData['email'], $userData['password'], $userData['role']);
+
+    if ($stmtUser->execute()) {
+        echo "Sample user inserted successfully.<br>";
+    } else {
+        echo "Error inserting user: " . $stmtUser->error . "<br>";
+    }
+
+    $stmtUser->close();
 } else {
-    echo "Error inserting user: " . $conn->error . "<br>";
+    echo "Error preparing user insertion statement: " . $conn->error . "<br>";
 }
 
+$courseData = [
+    ["Introduction to Python", "2024-02-01"],
+    ["Data Structures and Algorithms", "2024-01-15"],
+    ["Web Development with JavaScript", "2023-12-20"],
+];
 
-$courseName1 = "Introduction to Python";
-$enrollmentDate1 = "2024-02-01";
+$sqlInsertCourses = "INSERT INTO courses (course_name, enrollment_date, user_id) VALUES (?, ?, ?)";
+$stmtCourses = $conn->prepare($sqlInsertCourses);
 
-$courseName2 = "Data Structures and Algorithms";
-$enrollmentDate2 = "2024-01-15";
+if ($stmtCourses) {
+    $userId = getUserID($conn, $userData['username']);
 
-$courseName3 = "Web Development with JavaScript";
-$enrollmentDate3 = "2023-12-20";
+    foreach ($courseData as $data) {
+        $stmtCourses->bind_param("ssi", $data[0], $data[1], $userId);
 
-$sqlGetUserId = "SELECT user_id FROM users WHERE username = '$username'";
-$result = $conn->query($sqlGetUserId);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $userId = $row["user_id"];
-
-    $sqlInsertCourses = "INSERT INTO courses (course_name, enrollment_date, user_id) VALUES
-        ('$courseName1', '$enrollmentDate1', $userId),
-        ('$courseName2', '$enrollmentDate2', $userId),
-        ('$courseName3', '$enrollmentDate3', $userId)";
-
-    if ($conn->multi_query($sqlInsertCourses) === TRUE) {
-        echo "Sample courses inserted successfully.<br>";
-    } else {
-        echo "Error inserting courses: " . $conn->error . "<br>";
+        if (!$stmtCourses->execute()) {
+            echo "Error inserting courses: " . $stmtCourses->error . "<br>";
+            break;
+        }
     }
+
+    $stmtCourses->close();
 } else {
-    echo "User not found.<br>";
+    echo "Error preparing courses insertion statement: " . $conn->error . "<br>";
 }
 
 $conn->close();
+echo "Debug Point 2<br>";
+function getUserID($conn, $username)
+{
+    $sqlGetUserId = "SELECT user_id FROM users WHERE username = ?";
+    $stmtUserId = $conn->prepare($sqlGetUserId);
 
+    if ($stmtUserId) {
+        $stmtUserId->bind_param("s", $username);
+        $stmtUserId->execute();
+        $stmtUserId->bind_result($userId);
+        $stmtUserId->fetch();
+        $stmtUserId->close();
+
+        return $userId;
+    } else {
+        echo "Error preparing user ID statement: " . $conn->error . "<br>";
+        return null;
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +112,7 @@ $conn->close();
             <a href="Courses.php">All Courses</a>
             <a href="Contact.php">Contact</a>
             <a href="news.php">News</a>
+            <a href="DashboarPage.php">Dashboard</a>
             <div class="search">
                 <input type="text" placeholder="Search.." name="search">
             </div>
