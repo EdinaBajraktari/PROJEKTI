@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(isset($_POST['submit'])){
+    $_SESSION['username'] = $_POST['username'];
+
+    $_SESSION['password'] = $_POST['password'];
+    
+    
+    header('Location: Home.php');
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +23,7 @@
  
       <div class="container">
      
-      <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="Form" onsubmit="return validateForm()">
+      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" id="Form" onsubmit="return validateForm()">
         <h1>Login</h1>
         <div class="box">
        Username: <input  type="text" placeholder="username" name="username" id="username" required>
@@ -27,7 +39,7 @@
             <label><input type="checkbox">Remember me</label>
             <a href="#">Forgot password?</a>
              </div>
-            <button type="submit" name="btn" class="btn" value='RUAJ'>Submit</button>
+            <button type="submit" name="submit" class="btn" value='RUAJ'>Submit</button>
 
              <div class="register-link">
               <p>Dont have an account?<a href="register.php">  Register</a></p>
@@ -38,7 +50,7 @@
 
       </div>
       
-      <?php include_once '../controller/registerController.php';?>
+
 
     </body>
 </html>

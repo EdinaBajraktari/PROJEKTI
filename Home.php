@@ -1,14 +1,23 @@
+
 <?php
-  session_start();
-  $hide="";
-  if(!isset($_SESSION['username']))
-    header("location:login.php");
-  else{
-    if($_SESSION['role'] == "admin")
-      $hide = "";
-    else
-      $hide = "hide";
+$username = 'admin';
+$password = 'admin123';
+session_start();
+
+if(isset($_SESSION['username'])){
+  echo "<h2>YOU are login as an: ".$_SESSION['username']."</h2>";
+   echo "<a href='logout.php'>logout</a>";
+}else{
+if($_POST['username']==$username && $_POST['password']==$password){
+$_SESSION['username'] = $username;
+echo "<script>location.href='Home.php'</script>";
+}else{
+echo "<script>alert('perdoruesi ose fjalkalimi GABIM!').</script>";
+echo "<script>location.href='LoginForm.php'</script>";
+}
+}
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +27,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+    
+  
         <header>
 
 <!--Navigation bar dhe search-->
@@ -205,12 +216,7 @@
     </footer>
 
          
-    <h3><?php echo "Username: ".$_SESSION['username']."<br>" ?></h3>
-    <h3><?php echo "Login Time: ".$_SESSION['loginTime']."<br>"?></h3>
-
+  
     </body>
 </html>
 
-<?php
-  }
-?>
