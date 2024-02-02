@@ -127,11 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="not-specified"><span class="dot three"></span>Prefer not to say</label>
                 </div>
             </div>
-
+            <form action="login.php" method="post">
             <div class="button">
             <input type="submit" value="Register"><a href="LoginForm.php"></a>
-            <!--<button class="Register"><a href="LoginForm.php">Login</a></button>-->
             </div>
+</form>
 
     </form>
 </div> 

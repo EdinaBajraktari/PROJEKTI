@@ -34,8 +34,10 @@ function validateForm(){
             alert("Zgjidhni nje opsion për gjininë");
             return false;
         }
-        alert("Form Successfully Submitted");
+        window.location.href = "login.php";
         return true;
+        //alert("Form Successfully Submitted");
+        //return true;
 }        
 
 
