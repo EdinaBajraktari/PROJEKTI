@@ -1,3 +1,65 @@
+<?php
+
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "dashboardpage";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = "user1";
+$email = "user1@example.com";
+$password = password_hash("password123", PASSWORD_DEFAULT);
+
+
+$sqlInsertUser = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+if ($conn->query($sqlInsertUser) === TRUE) {
+    echo "Sample user inserted successfully.<br>";
+} else {
+    echo "Error inserting user: " . $conn->error . "<br>";
+}
+
+
+$courseName1 = "Introduction to Python";
+$enrollmentDate1 = "2024-02-01";
+
+$courseName2 = "Data Structures and Algorithms";
+$enrollmentDate2 = "2024-01-15";
+
+$courseName3 = "Web Development with JavaScript";
+$enrollmentDate3 = "2023-12-20";
+
+$sqlGetUserId = "SELECT user_id FROM users WHERE username = '$username'";
+$result = $conn->query($sqlGetUserId);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userId = $row["user_id"];
+
+    $sqlInsertCourses = "INSERT INTO courses (course_name, enrollment_date, user_id) VALUES
+        ('$courseName1', '$enrollmentDate1', $userId),
+        ('$courseName2', '$enrollmentDate2', $userId),
+        ('$courseName3', '$enrollmentDate3', $userId)";
+
+    if ($conn->multi_query($sqlInsertCourses) === TRUE) {
+        echo "Sample courses inserted successfully.<br>";
+    } else {
+        echo "Error inserting courses: " . $conn->error . "<br>";
+    }
+} else {
+    echo "User not found.<br>";
+}
+
+$conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +67,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ED-Learn Courses - Dashboard</title>
     <link rel="stylesheet" href="DashboardPage.css">
-    <script src="DashboardPage.js"></script>
+    <!--<script src="DashboardPage.js"></script>-->
 </head>
 <body>
     <header>
@@ -81,6 +143,7 @@
             </div>
         </div>
     </footer>
+    <script src="DashboardPage.js"></script>
 </body>
 </html>
 
