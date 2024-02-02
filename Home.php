@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  $hide="";
+  if(!isset($_SESSION['username']))
+    header("location:login.php");
+  else{
+    if($_SESSION['role'] == "admin")
+      $hide = "";
+    else
+      $hide = "hide";
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +29,8 @@
                 <a href="Courses.php">All Courses</a>
                 <a href="Contact.php">Contact</a>
                 <a href="news.php">News</a>
+                <a href="dashboard.php" class="<?php echo $hide?>">Dashboard</a>
+                <a href="logout.php">Logout</a>
                 <div class="search">
                
                     <input type="text" placeholder="Search.." name="search">
@@ -191,5 +204,13 @@
         </div>
     </footer>
 
-   
+         
+    <h3><?php echo "Username: ".$_SESSION['username']."<br>" ?></h3>
+    <h3><?php echo "Login Time: ".$_SESSION['loginTime']."<br>"?></h3>
+
+    </body>
 </html>
+
+<?php
+  }
+?>

@@ -10,7 +10,8 @@
     <body>
  
       <div class="container">
-       <form method="POST" action="Metoda.php" id="Form" onsubmit="return validateForm()">
+     
+      <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="Form" onsubmit="return validateForm()">
         <h1>Login</h1>
         <div class="box">
        Username: <input  type="text" placeholder="username" name="username" id="username" required>
@@ -37,7 +38,7 @@
 
       </div>
       
-    
+      <?php include_once '../controller/registerController.php';?>
 
     </body>
 </html>
